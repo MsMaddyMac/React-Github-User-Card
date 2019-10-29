@@ -7,7 +7,7 @@ import GithubUserCard from './components/GithubUserCard';
 
 class App extends Component {
   state = {
-    users: {}
+    user: {}
   };
 
   componentDidMount() {
@@ -16,7 +16,7 @@ class App extends Component {
     .then(res => {
       console.log(res);
       this.setState({
-        users: res.data.data
+        user: res.data
       });
     })
   
@@ -26,11 +26,11 @@ class App extends Component {
   }
 
   render() {
-    console.log('App is rendering...')
+    console.log('App is rendering...', this.state.user)
     return (
       <div className="App">
         <h1>Github Users</h1>
-        <GithubUserCard users={this.state.users} />
+        <GithubUserCard user={this.state.user} />
       </div>
     );
   }
