@@ -3,11 +3,13 @@ import axios from 'axios';
 import './App.css';
 
 import GithubUserCard from './components/GithubUserCard';
+import GithubUserFollowers from './components/GithubUserFollowers';
 
 
 class App extends Component {
   state = {
-    user: {}
+    user: {},
+    followers: []
   };
 
   componentDidMount() {
@@ -18,6 +20,14 @@ class App extends Component {
       this.setState({
         user: res.data
       });
+      axios
+      .get('https://api.github.com/users/MsMaddyMac/followers')
+      .then(res => {
+        console.log(res);
+        this.setState({
+          followers:res.data
+        })
+      })
     })
   
     .catch(error => {
@@ -26,11 +36,12 @@ class App extends Component {
   }
 
   render() {
-    console.log('App is rendering...', this.state.user)
+    console.log('App is rendering...')
     return (
       <div className="App">
         <h1>Github Users</h1>
         <GithubUserCard user={this.state.user} />
+        <GithubUserFollowers followers={this.state.followers} />
       </div>
     );
   }
