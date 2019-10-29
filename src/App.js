@@ -2,19 +2,22 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// import GithubUserCard from './components/GithubUserCard';
+import GithubUserCard from './components/GithubUserCard';
 
 
 class App extends Component {
   state = {
-    user: {}
+    users: {}
   };
 
   componentDidMount() {
     axios
     .get('https://api.github.com/users/MsMaddyMac')
-    .then(response => {
-      console.log(response);
+    .then(res => {
+      console.log(res);
+      this.setState({
+        users: res.data.data
+      });
     })
   
     .catch(error => {
@@ -26,12 +29,8 @@ class App extends Component {
     console.log('App is rendering...')
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Github Users</h1>
-        </header>
-        <div className="user-list">
-          {/* <GithubUserList /> */}
-        </div>
+        <h1>Github Users</h1>
+        <GithubUserCard users={this.state.users} />
       </div>
     );
   }
