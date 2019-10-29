@@ -14,6 +14,7 @@ const GithubUserCard = props => {
             </p>
             <p>Followers: {props.user.followers}</p>
             <p>Following: {props.user.following}</p>
+            <p>Bio: {props.user.bio}</p>
         </div>
        </div>
     )
