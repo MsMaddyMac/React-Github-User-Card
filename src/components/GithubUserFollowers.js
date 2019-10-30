@@ -1,5 +1,7 @@
 import React from 'react';
 
+// we are able to map through the information coming in because it is an array. To access we use follower(the name of the parameter in map function).id, etc.
+
 const GithubUserFollowers = props => {
     return (
         <>
