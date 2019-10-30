@@ -73,7 +73,7 @@ body {
 }
 
 .card img {
-  width: 150px;
+  width: 165px;
   height: 150px;
   border-radius: 3px;
   margin-right: 20px;
@@ -89,12 +89,12 @@ body {
 }
 
 .card .username {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-style: italic;
   margin: 3px 0 10px;
 }
 
-.card-info a {
+a {
   text-decoration: none;
 }
 
@@ -107,6 +107,7 @@ h3 {
   font-size: 2rem;
   text-align: center;
   padding-top: 7px;
+  color: #5fa4d6;
 }
 
 .follower-cards {
@@ -119,19 +120,17 @@ h3 {
 
 .follower {
   margin-top: 50px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
+  border-radius: 0px 5px 5px 5px;
   box-shadow: 0 1px 6px -2px #000;
-  background-color: #FFF;
+  background-color: #f9ef7f;
   margin-bottom: 30px;
+  padding-bottom: 5px;
 }
 
 .follower img {
   width: 150px;
   height: 150px;
-  border-radius: 3px;
   margin-right: 20px;
+  border-bottom-right-radius: 3px;
 }
 
